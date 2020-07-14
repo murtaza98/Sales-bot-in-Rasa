@@ -1,0 +1,91 @@
+actions:
+- action_handover
+- action_react_to_reminder
+- action_set_reminder
+- respond_faq
+- utter_ask_business_email
+- utter_cheer_up
+- utter_did_that_help
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_iamabot
+- action_default_fallback
+- utter_no_email
+entities:
+- PERSON
+- budget
+- business_email
+- company
+- email
+- job_function
+- livechat
+- person_name
+- rocketchat
+- use_case
+forms:
+- sales_form
+intents:
+- human_handoff
+- reminder
+- greet
+- faq
+- contact_sales
+- inform
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- out_of_scope
+responses:
+  utter_ask_business_email:
+  - text: What's your business email?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_goodbye:
+  - text: Bye
+  utter_greet:
+  - buttons:
+    - payload: What is Rocket.Chat?
+      title: What is Rocket.Chat?
+    - payload: I want to talk to an online agent
+      title: I want to talk to an online agent
+    - payload: Remind me in 10 seconds
+      title: Remind me in 10 seconds
+    - payload: Where can I install Rocket.Chat
+      title: Where can I install Rocket.Chat
+    - payload: Tell me about Live-Chat feature
+      title: Tell me about Live-Chat feature
+    text: Hello! How can I assist you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_no_email:
+  - text: The email isn't in a valid format. Please enter a valid email
+  utter_default:
+  - buttons:
+    - payload: What is Rocket.Chat?
+      title: What is Rocket.Chat?
+    - payload: I want to talk to an online agent
+      title: I want to talk to an online agent
+    - payload: Remind me in 10 seconds
+      title: Remind me in 10 seconds
+    - payload: Where can I install Rocket.Chat
+      title: Where can I install Rocket.Chat
+    - payload: Tell me about Live-Chat feature
+      title: Tell me about Live-Chat feature
+    text: Sorry, I'm not sure I've understood you correctly 🤔 Do you mean...
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60
+slots:
+  business_email:
+    type: unfeaturized
+  requested_slot:
+    type: unfeaturized
