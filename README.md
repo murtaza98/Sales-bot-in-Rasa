@@ -68,12 +68,10 @@
     - **Linux:** `source venv/bin/activate`
     - **Windows:** `.\venv\Scripts\activate.bat`
 2. Open a new terminal and run actions
-    - rasa run actions
+    - `rasa run actions`
 3. Open a new terminal and run duckling which is used for entity extraction
     ```
     docker run -p 8000:8000 rasa/duckling
     ```
 3. Lastly, open a new terminal to run rasa
-    ```bash
-    $ rasa run
-    ```
+    `rasa run`
