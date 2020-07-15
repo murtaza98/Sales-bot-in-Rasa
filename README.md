@@ -65,7 +65,7 @@
     
 ## Usage Instructions:
 1. Activate the environment:
-    - **Linux:** `source venv/bin/activate`
+    - **Linux / macOS:** `source venv/bin/activate`
     - **Windows:** `.\venv\Scripts\activate.bat`
 2. Open a new terminal and run actions
     - `rasa run actions`
