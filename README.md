@@ -73,5 +73,5 @@
     ```
     docker run -p 8000:8000 rasa/duckling
     ```
-3. Lastly, open a new terminal to run rasa
+3. Lastly, open a new terminal to run rasa <br/>
     `rasa run`
