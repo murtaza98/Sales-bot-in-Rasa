@@ -9,6 +9,7 @@
 
 from typing import Any, Text, Dict, List, Union
 
+import requests
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import ReminderScheduled, UserUtteranceReverted, EventType, ConversationPaused, SlotSet
 from rasa_sdk.executor import CollectingDispatcher
@@ -16,6 +17,8 @@ from rasa_sdk.forms import FormAction
 import time
 import datetime
 
+
+INCOMING_ENDPOINT_URL = "http://localhost:3000/api/apps/public/646b8e7d-f1e1-419e-9478-10d0f5bc74d9/incoming"
 
 class ActionHelloWorld(Action):
 
@@ -92,6 +95,14 @@ class HandoverAction(Action):
 
         dispatcher.utter_message(text="Sorry I couldn't solve your problem. I'm attempting to transfer you to an online agent");
         time.sleep(1)
+
+        payload = {
+            'action': 'handover',
+            'sessionId': tracker.sender_id
+        }
+
+        response = requests.post(INCOMING_ENDPOINT_URL, data=payload)
+        print('Handover Endpoint response', response)
 
         return []
 
