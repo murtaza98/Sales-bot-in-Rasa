@@ -12,6 +12,8 @@ actions:
 - utter_iamabot
 - action_default_fallback
 - utter_no_email
+- action_close_chat
+- action_react_to_close_chat
 entities:
 - PERSON
 - budget
@@ -32,13 +34,15 @@ intents:
 - faq
 - contact_sales
 - inform
-- goodbye
+- goodbye: { triggers: action_close_chat }
 - affirm
 - deny
 - mood_great
 - mood_unhappy
 - bot_challenge
 - out_of_scope
+- react_to_close_chat: { triggers: action_react_to_close_chat }
+- react_to_reminder: { triggers: action_react_to_reminder }
 responses:
   utter_ask_business_email:
   - text: What's your business email?

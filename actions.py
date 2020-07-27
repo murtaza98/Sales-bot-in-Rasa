@@ -34,6 +34,47 @@ class ActionHelloWorld(Action):
         return []
 
 
+class ActionCloseChat(Action):
+
+    def name(self) -> Text:
+        return "action_close_chat"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(text="Goodbye!! Closing this chat in a 5 seconds.... (Note it will only work if callback is enabled)")
+
+        date = datetime.datetime.now() + datetime.timedelta(seconds=5)
+
+        reminder = ReminderScheduled(
+            "react_to_close_chat",
+            trigger_date_time=date,
+            name="close_chat",
+            kill_on_user_message=False,
+        )
+
+        return [reminder]
+
+
+class ActionReactToCloseChat(Action):
+    """Reminds the user to call someone."""
+
+    def name(self) -> Text:
+        return "action_react_to_close_chat"
+
+    def run(self, dispatcher, tracker, domain):
+        payload = {
+            'action': 'close-chat',
+            'sessionId': tracker.sender_id
+        }
+
+        response = requests.post(INCOMING_ENDPOINT_URL, data=payload)
+        print('Close Chat Endpoint response', response)
+
+        return []
+
+
 class SalesForm(FormAction):
     """Collects sales information and adds it to the spreadsheet"""
 
@@ -118,7 +159,7 @@ class ActionSetReminder(Action):
         date = datetime.datetime.now() + datetime.timedelta(seconds=10)
 
         reminder = ReminderScheduled(
-            "action_react_to_reminder",
+            "react_to_reminder",
             trigger_date_time=date,
             name="my_reminder",
             kill_on_user_message=False,
