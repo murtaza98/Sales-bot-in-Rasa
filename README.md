@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- Python 3.7
+- Python 3.7. [Install Python 3.7 on Ubuntu](https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/)
 - Docker
 
 ## Installation
