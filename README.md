@@ -6,7 +6,7 @@
 
 ## Installation
 
-1. Install Python<br/>
+1. Install Python. **Please make sure to install Python 3.7. Rasa won't work with any other python version** <br/>
 
     **Windows** <br/>
     You can install it from [here](https://www.python.org/downloads/windows/)<br/>
@@ -14,13 +14,13 @@
     **macOS**
     ```bash
     $ brew update
-    $ brew install python
+    $ brew install python3.7
     ```
  
     **Linux** 
     ```bash
     $ sudo apt update
-    $ sudo apt install python3-dev python3-pip
+    $ sudo apt install python3.7
     ```
 
 2. Install, create and activate a Virtual Environment
