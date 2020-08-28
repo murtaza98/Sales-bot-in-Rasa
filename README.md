@@ -2,12 +2,12 @@
 
 ## Requirements
 
-- Python 3.7. [Install Python 3.7 on Ubuntu 18.04](https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/)
+- Python 3.6 or Python 3.7 [Install Python 3.7 on Ubuntu 18.04](https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/)
 - Docker
 
 ## Installation
 
-1. Install Python. **Please make sure to install Python 3.7. Rasa won't work with any other python version** <br/>
+1. Install Python. **Please make sure to install Python 3.6 or Python 3.7. Rasa won't work with any other python version** <br/>
 
     **Windows** <br/>
     You can install it from [here](https://www.python.org/downloads/windows/)<br/>
@@ -19,10 +19,7 @@
     ```
  
     **Linux** 
-    ```bash
-    $ sudo apt update
-    $ sudo apt install python3.7 python3-pip
-    ```
+    - Follow [this](https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/) blog
 
 2. Install, create and activate a Virtual Environment
     1. Install virtual Environment<br/>
