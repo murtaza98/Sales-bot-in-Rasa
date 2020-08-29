@@ -4,6 +4,8 @@
 
 - Python 3.6 or Python 3.7 [Install Python 3.7 on Ubuntu 18.04](https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/)
 - Docker
+- [Tensorflow Hardware requirements](https://www.tensorflow.org/install/pip#hardware-requirements) 
+   > Note if your hardware doesn't support `AVX` instructions then u will have to build tensorflow from source as described [here](https://www.tensorflow.org/install/source)
 
 ## Installation
 
